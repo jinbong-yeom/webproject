@@ -6,10 +6,10 @@
 5. 나중에는 사람들이랑도 할 수 있게 함
 6. 닉네임은 랭크, 동물
   
-member
-id
-name
-password
-email
-money
-nickname
+##member
+id. 
+name. 
+password. 
+email. 
+money. 
+nickname. 
