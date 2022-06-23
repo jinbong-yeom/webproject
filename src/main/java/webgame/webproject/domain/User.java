@@ -9,10 +9,10 @@ import java.util.List;
 
 @Entity
 @Getter @Setter
-public class Member {
+public class User {
 
     @Id @GeneratedValue
-    @Column(name = "member_id")
+    @Column(name = "user_id")
     private Long id;
 
     @Column(unique = true)
@@ -23,6 +23,6 @@ public class Member {
     @Column(unique = true)
     private String email;
 
-    @OneToMany(mappedBy = "member")//연관관계 주입으로 닉네임에 있는 FK를 중심이 되게 해야함, 매핑이 되어 여기서 값이 변경이 안됨
+    @OneToMany(mappedBy = "user")//연관관계 주입으로 닉네임에 있는 FK를 중심이 되게 해야함, 매핑이 되어 여기서 값이 변경이 안됨
     private List<Nickname> nicknames = new ArrayList<>();
 }

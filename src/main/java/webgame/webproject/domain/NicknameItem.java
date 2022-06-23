@@ -14,6 +14,8 @@ public class NicknameItem {
     @Column(name = "nickname_item_id")
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "item_id")
     private Item item;
 
     @ManyToOne

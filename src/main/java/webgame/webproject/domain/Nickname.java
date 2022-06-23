@@ -17,8 +17,8 @@ public class Nickname {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "member_id")
-    private Member member;
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @OneToMany(mappedBy = "nickname")
     private List<NicknameItem> nicknameItems = new ArrayList<>();

@@ -10,7 +10,8 @@ import javax.persistence.Id;
 
 @Entity
 @Getter @Setter
-public abstract class Item {
+
+public class Item {
 
     @Id
     @GeneratedValue
