@@ -14,9 +14,12 @@ import webgame.webproject.order.OrderServiceImpl;
 public class OrderApp {
 
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
-        NicknameService nicknameService = new NicknameServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
+        AppConfig appConfig = new AppConfig();
+
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
+        NicknameService nicknameService = appConfig.nicknameService();
+
 
         Nickname nickname1 = new Nickname(1L, "사자", 1000, Status.AVAILABLE);
         Nickname nickname2 = new Nickname(2L, "호랑이", 100000000, Status.AVAILABLE);

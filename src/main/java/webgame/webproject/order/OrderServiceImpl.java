@@ -10,8 +10,14 @@ import webgame.webproject.nickname.Status;
 
 public class OrderServiceImpl implements OrderService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
-    private final NicknameRepository nicknameRepository = new MemoryNicknameRepository();
+    private MemberRepository memberRepository;
+    private NicknameRepository nicknameRepository;
+
+
+    public OrderServiceImpl(MemberRepository memberRepository, NicknameRepository nicknameRepository) {
+        this.memberRepository = memberRepository;
+        this.nicknameRepository = nicknameRepository;
+    }
 
     @Override
     public Order createOrder(String memberId, String itemName) {

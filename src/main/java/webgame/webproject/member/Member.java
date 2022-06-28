@@ -21,4 +21,5 @@ public class Member {
     public void Calculator(int price) {
         this.money -= price;
     }
+
 }

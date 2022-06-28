@@ -1,8 +1,11 @@
 package webgame.webproject.nickname;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@Repository
 public class MemoryNicknameRepository implements NicknameRepository {
 
     private static Map<String, Nickname> store = new HashMap<>();

@@ -1,8 +1,16 @@
 package webgame.webproject.nickname;
 
-public class NicknameServiceImpl implements NicknameService {
-    private final NicknameRepository nicknameRepository = new MemoryNicknameRepository();
+import org.springframework.stereotype.Service;
 
+@Service
+public class NicknameServiceImpl implements NicknameService {
+
+    private final NicknameRepository nicknameRepository;
+
+
+    public NicknameServiceImpl(NicknameRepository nicknameRepository) {
+        this.nicknameRepository = nicknameRepository;
+    }
 
     @Override
     public void join(Nickname nickname) {
