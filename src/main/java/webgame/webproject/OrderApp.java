@@ -1,6 +1,9 @@
 package webgame.webproject;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import webgame.webproject.member.Member;
+import webgame.webproject.member.MemberRepository;
 import webgame.webproject.member.MemberService;
 import webgame.webproject.member.MemberServiceImpl;
 import webgame.webproject.nickname.Nickname;
@@ -14,12 +17,18 @@ import webgame.webproject.order.OrderServiceImpl;
 public class OrderApp {
 
     public static void main(String[] args) {
-        AppConfig appConfig = new AppConfig();
+//        AppConfig appConfig = new AppConfig();
+//
+//        MemberService memberService = AppConfig.memberService();
+//        OrderService orderService = AppConfig.orderService();
+//        NicknameService nicknameService = AppConfig.nicknameService();
+        //스프링 컨테이너
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        MemberService memberService = appConfig.memberService();
-        OrderService orderService = appConfig.orderService();
-        NicknameService nicknameService = appConfig.nicknameService();
-
+        //getBean으로 스프링 빈을 찾음
+        MemberService memberService = ac.getBean("memberService", MemberService.class);
+        NicknameService nicknameService = ac.getBean("nicknameService", NicknameService.class);
+        OrderService orderService = ac.getBean("orderService", OrderService.class);
 
         Nickname nickname1 = new Nickname(1L, "사자", 1000, Status.AVAILABLE);
         Nickname nickname2 = new Nickname(2L, "호랑이", 100000000, Status.AVAILABLE);

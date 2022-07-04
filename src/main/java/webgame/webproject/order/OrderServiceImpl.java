@@ -1,5 +1,8 @@
 package webgame.webproject.order;
 
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import webgame.webproject.member.Member;
 import webgame.webproject.member.MemberRepository;
 import webgame.webproject.member.MemoryMemberRepository;
@@ -8,16 +11,13 @@ import webgame.webproject.nickname.Nickname;
 import webgame.webproject.nickname.NicknameRepository;
 import webgame.webproject.nickname.Status;
 
+@Component
+@RequiredArgsConstructor //생성자
 public class OrderServiceImpl implements OrderService {
 
-    private MemberRepository memberRepository;
-    private NicknameRepository nicknameRepository;
+    private final MemberRepository memberRepository;
+    private final NicknameRepository nicknameRepository;
 
-
-    public OrderServiceImpl(MemberRepository memberRepository, NicknameRepository nicknameRepository) {
-        this.memberRepository = memberRepository;
-        this.nicknameRepository = nicknameRepository;
-    }
 
     @Override
     public Order createOrder(String memberId, String itemName) {
