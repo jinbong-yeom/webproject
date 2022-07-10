@@ -1,9 +1,10 @@
-package webgame.webproject.member;
+package webgame.webproject.repository;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+import webgame.webproject.domain.Member;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 //@Component
@@ -18,7 +19,18 @@ public class MemoryMemberRepository implements MemberRepository {
     }
 
     @Override
-    public Member findById(String memberId) {
-        return store.get(memberId);
+    public Member findOne(String id) {
+        return store.get(id);
     }
+
+    @Override
+    public List<Member> findAll() {
+        return null;
+    }
+
+    @Override
+    public List<Member> findByName(String name) {
+        return null;
+    }
+
 }

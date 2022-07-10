@@ -1,13 +1,12 @@
 package webgame.webproject.beanfind;
 
-import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import webgame.webproject.AppConfig;
-import webgame.webproject.member.MemberService;
-import webgame.webproject.member.MemberServiceImpl;
+import webgame.webproject.service.MemberService;
+import webgame.webproject.service.MemberServiceImpl;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;

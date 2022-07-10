@@ -5,6 +5,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import webgame.webproject.AppConfig;
+import webgame.webproject.domain.Nickname;
+import webgame.webproject.domain.Status;
+import webgame.webproject.repository.NicknameRepository;
+import webgame.webproject.service.NicknameService;
 
 @SpringBootTest
 public class NicknameServiceTest {

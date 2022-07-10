@@ -1,9 +1,9 @@
-package webgame.webproject.member;
+package webgame.webproject.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import webgame.webproject.domain.Member;
+import webgame.webproject.repository.MemberRepository;
 
 //@Component
 @Service

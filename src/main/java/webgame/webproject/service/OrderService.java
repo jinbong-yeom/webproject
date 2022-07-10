@@ -1,4 +1,6 @@
-package webgame.webproject.order;
+package webgame.webproject.service;
+
+import webgame.webproject.domain.Order;
 
 public interface OrderService {
     Order createOrder(String memberId, String itemName);

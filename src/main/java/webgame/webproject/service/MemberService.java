@@ -1,5 +1,7 @@
-package webgame.webproject.member;
+package webgame.webproject.service;
 
+
+import webgame.webproject.domain.Member;
 
 public interface MemberService {
 

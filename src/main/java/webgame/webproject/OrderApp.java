@@ -1,18 +1,13 @@
 package webgame.webproject;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import webgame.webproject.member.Member;
-import webgame.webproject.member.MemberRepository;
-import webgame.webproject.member.MemberService;
-import webgame.webproject.member.MemberServiceImpl;
-import webgame.webproject.nickname.Nickname;
-import webgame.webproject.nickname.NicknameService;
-import webgame.webproject.nickname.NicknameServiceImpl;
-import webgame.webproject.nickname.Status;
-import webgame.webproject.order.Order;
-import webgame.webproject.order.OrderService;
-import webgame.webproject.order.OrderServiceImpl;
+import webgame.webproject.domain.Member;
+import webgame.webproject.service.MemberService;
+import webgame.webproject.domain.Nickname;
+import webgame.webproject.service.NicknameService;
+import webgame.webproject.domain.Status;
+import webgame.webproject.domain.Order;
+import webgame.webproject.service.OrderService;
 
 public class OrderApp {
 

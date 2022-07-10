@@ -1,7 +1,7 @@
-package webgame.webproject.nickname;
+package webgame.webproject.repository;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+import webgame.webproject.domain.Nickname;
 
 import java.util.HashMap;
 import java.util.Map;

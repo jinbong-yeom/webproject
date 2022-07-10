@@ -1,13 +1,12 @@
 package webgame.webproject.member;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.stereotype.Service;
 import webgame.webproject.AppConfig;
+import webgame.webproject.domain.Member;
+import webgame.webproject.repository.MemberRepository;
+import webgame.webproject.service.MemberService;
 
 import static org.assertj.core.api.Assertions.*;
 

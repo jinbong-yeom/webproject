@@ -2,16 +2,16 @@ package webgame.webproject;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import webgame.webproject.member.MemberRepository;
-import webgame.webproject.member.MemberService;
-import webgame.webproject.member.MemberServiceImpl;
-import webgame.webproject.member.MemoryMemberRepository;
-import webgame.webproject.nickname.MemoryNicknameRepository;
-import webgame.webproject.nickname.NicknameRepository;
-import webgame.webproject.nickname.NicknameService;
-import webgame.webproject.nickname.NicknameServiceImpl;
-import webgame.webproject.order.OrderService;
-import webgame.webproject.order.OrderServiceImpl;
+import webgame.webproject.repository.MemberRepository;
+import webgame.webproject.service.MemberService;
+import webgame.webproject.service.MemberServiceImpl;
+import webgame.webproject.repository.MemoryMemberRepository;
+import webgame.webproject.repository.MemoryNicknameRepository;
+import webgame.webproject.repository.NicknameRepository;
+import webgame.webproject.service.NicknameService;
+import webgame.webproject.service.NicknameServiceImpl;
+import webgame.webproject.service.OrderService;
+import webgame.webproject.service.OrderServiceImpl;
 
 //스프링 컨테이너가 어노테이션 붙은 설정 정보를 사용
 @Configuration

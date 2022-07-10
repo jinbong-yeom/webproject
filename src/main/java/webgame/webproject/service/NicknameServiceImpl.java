@@ -1,9 +1,9 @@
-package webgame.webproject.nickname;
+package webgame.webproject.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import webgame.webproject.domain.Nickname;
+import webgame.webproject.repository.NicknameRepository;
 
 //@Component
 @Service

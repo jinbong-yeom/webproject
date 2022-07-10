@@ -2,7 +2,7 @@ package webgame.webproject.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import webgame.webproject.member.MemberService;
+import webgame.webproject.service.MemberService;
 
 @Controller
 public class MemberController {

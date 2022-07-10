@@ -1,15 +1,13 @@
-package webgame.webproject.order;
+package webgame.webproject.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import webgame.webproject.member.Member;
-import webgame.webproject.member.MemberRepository;
-import webgame.webproject.member.MemoryMemberRepository;
-import webgame.webproject.nickname.MemoryNicknameRepository;
-import webgame.webproject.nickname.Nickname;
-import webgame.webproject.nickname.NicknameRepository;
-import webgame.webproject.nickname.Status;
+import webgame.webproject.domain.Member;
+import webgame.webproject.domain.Order;
+import webgame.webproject.repository.MemberRepository;
+import webgame.webproject.domain.Nickname;
+import webgame.webproject.repository.NicknameRepository;
+import webgame.webproject.domain.Status;
 
 @Component
 @RequiredArgsConstructor //생성자

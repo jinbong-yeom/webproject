@@ -1,16 +1,15 @@
 package webgame.webproject.order;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import webgame.webproject.AppConfig;
-import webgame.webproject.member.Member;
-import webgame.webproject.member.MemberService;
-import webgame.webproject.member.MemberServiceImpl;
-import webgame.webproject.nickname.Nickname;
-import webgame.webproject.nickname.NicknameService;
-import webgame.webproject.nickname.NicknameServiceImpl;
-import webgame.webproject.nickname.Status;
+import webgame.webproject.domain.Member;
+import webgame.webproject.domain.Order;
+import webgame.webproject.service.MemberService;
+import webgame.webproject.domain.Nickname;
+import webgame.webproject.service.NicknameService;
+import webgame.webproject.domain.Status;
+import webgame.webproject.service.OrderService;
 
 import static org.assertj.core.api.Assertions.*;
 
