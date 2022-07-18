@@ -3,11 +3,13 @@ package webgame.webproject.domain;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter @Setter
 @ToString
 @Entity
 public class Nickname {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -22,4 +24,11 @@ public class Nickname {
     private Status status;
     
     private String userId = null;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "member_id")
+    private Member member;
+
+    @OneToMany(mappedBy = "nickname")
+    private List<Auction> auction;
 }

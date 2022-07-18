@@ -8,7 +8,7 @@ public interface MemberRepository {
 
     void save(Member member);
 
-    Member findOne(String id);
+    Member findOne(Long id);
 
     List<Member> findAll();
 

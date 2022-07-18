@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import webgame.webproject.domain.Member;
 import webgame.webproject.repository.MemberRepository;
 
+import java.util.List;
+
 //@Component
 @Service
 @RequiredArgsConstructor
@@ -12,19 +14,30 @@ public class MemberServiceImpl implements MemberService {
 
     private final MemberRepository memberRepository;
 
-//    @Autowired 생략가능
-//    public MemberServiceImpl(MemberRepository memberRepository) {
-//        this.memberRepository = memberRepository;
-//    }
-
     @Override
-    public void join(Member member) {
+    public Long join(Member member) {
+
+        validateDuplicateMember(member);
         memberRepository.save(member);
+        return member.getId();
+    }
+
+    private void validateDuplicateMember(Member member) {
+
+        List<Member> findMembers = memberRepository.findByName(member.getUserId());
+        if (!findMembers.isEmpty()) {
+            throw new IllegalStateException("이미 존재하는 회원 입니다.");
+        }
     }
 
 
     @Override
-    public Member findMember(String memberId) {
-        return memberRepository.findById(memberId);
+    public List<Member> findMembers() {
+        return memberRepository.findAll();
+    }
+
+    @Override
+    public Member findMember(Long memberId) {
+        return memberRepository.findOne(memberId);
     }
 }

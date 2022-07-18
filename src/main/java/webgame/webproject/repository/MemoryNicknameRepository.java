@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 import webgame.webproject.domain.Nickname;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 //@Component
@@ -18,7 +19,17 @@ public class MemoryNicknameRepository implements NicknameRepository {
     }
 
     @Override
-    public Nickname findByName(String name) {
-        return store.get(name);
+    public Nickname findOne(Long id) {
+        return store.get(id);
+    }
+
+    @Override
+    public List<Nickname> findAll() {
+        return null;
+    }
+
+    @Override
+    public List<Nickname> findByName(String name) {
+        return null;
     }
 }

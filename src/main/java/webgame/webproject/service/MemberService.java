@@ -3,9 +3,14 @@ package webgame.webproject.service;
 
 import webgame.webproject.domain.Member;
 
+import java.util.List;
+
 public interface MemberService {
 
-    void join(Member member);
+    Long join(Member member);
 
-    Member findMember(String memberId);
+    List<Member> findMembers();
+
+    Member findMember(Long memberId);
+
 }

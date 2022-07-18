@@ -12,19 +12,25 @@ import java.util.List;
 @Getter @Setter
 @Entity
 public class Member {
+
     @Id
     @GeneratedValue
     @Column(name = "member_id")
     private long id;
 
     @Column(unique = true)
-    private String name;
+    private String userId;
+
 
     @Column(nullable = false)
     private String password;
 
     @Column
     private int money;
+
+
+    @OneToMany(mappedBy = "member")
+    private List<Auction> auctions = new ArrayList<>();
 
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();

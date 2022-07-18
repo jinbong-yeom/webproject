@@ -1,11 +1,18 @@
 package webgame.webproject.service;
 
 import webgame.webproject.domain.Order;
+import webgame.webproject.repository.OrderSearch;
+
+import java.util.List;
 
 public interface OrderService {
-    Order createOrder(String memberId, String itemName);
 
-    void showAllList();
+
+    Long createOrder(Long memberId, Long itemId);
+
+    void refund(Long orderId);
+
+    List<Order> findOrders(OrderSearch orderSearch);
 
 
 }

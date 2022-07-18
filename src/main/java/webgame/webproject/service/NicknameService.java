@@ -2,8 +2,14 @@ package webgame.webproject.service;
 
 import webgame.webproject.domain.Nickname;
 
-public interface NicknameService {
-    void join(Nickname nickname);
+import java.util.List;
 
-    Nickname findNickname(String name);
+public interface NicknameService {
+    Long join(Nickname nickname);
+
+    List<Nickname> findAll();
+
+    Nickname findOne(Long id);
+
+
 }
