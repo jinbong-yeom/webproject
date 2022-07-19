@@ -31,8 +31,9 @@ public class DatabaseMemberRepository implements MemberRepository{
     }
 
     @Override
-    public List<Member> findByName(String name) {
-        return em.createQuery("select m from Member m.name = :name", Member.class)
+    public List<Member> findByName(String userId) {
+        return em.createQuery("select m from Member m where m.userId = :userId", Member.class)
+                .setParameter("userId", userId)
                 .getResultList();
     }
 }

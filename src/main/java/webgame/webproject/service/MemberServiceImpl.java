@@ -2,19 +2,23 @@ package webgame.webproject.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import webgame.webproject.domain.Member;
+import webgame.webproject.repository.DatabaseMemberRepository;
 import webgame.webproject.repository.MemberRepository;
 
 import java.util.List;
 
 //@Component
 @Service
+@Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService {
 
-    private final MemberRepository memberRepository;
+    private final DatabaseMemberRepository memberRepository;
 
     @Override
+    @Transactional
     public Long join(Member member) {
 
         validateDuplicateMember(member);

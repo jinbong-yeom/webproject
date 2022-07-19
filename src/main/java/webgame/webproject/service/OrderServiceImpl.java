@@ -2,24 +2,25 @@ package webgame.webproject.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import webgame.webproject.domain.*;
-import webgame.webproject.repository.MemberRepository;
-import webgame.webproject.repository.NicknameRepository;
-import webgame.webproject.repository.OrderRepository;
-import webgame.webproject.repository.OrderSearch;
+import webgame.webproject.repository.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Service
+@Transactional(readOnly = true)
 @RequiredArgsConstructor //생성자
 public class OrderServiceImpl implements OrderService {
 
-    private final OrderRepository orderRepository;
-    private final MemberRepository memberRepository;
-    private final NicknameRepository nicknameRepository;
+    private final DatabaseOrderRepository orderRepository;
+    private final DatabaseMemberRepository memberRepository;
+    private final DatabaseNicknameRepository nicknameRepository;
 
     @Override
+    @Transactional
     public Long createOrder(Long memberId, Long nicknameId) {
         Member member = memberRepository.findOne(memberId);
         Nickname nickname = nicknameRepository.findOne(nicknameId);

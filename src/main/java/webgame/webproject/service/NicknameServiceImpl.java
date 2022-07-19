@@ -2,20 +2,24 @@ package webgame.webproject.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import webgame.webproject.domain.Nickname;
+import webgame.webproject.repository.DatabaseNicknameRepository;
 import webgame.webproject.repository.NicknameRepository;
 
 import java.util.List;
 
 //@Component
 @Service
+@Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class NicknameServiceImpl implements NicknameService {
 
-    private final NicknameRepository nicknameRepository;
+    private final DatabaseNicknameRepository nicknameRepository;
 
 
     @Override
+    @Transactional
     public Long join(Nickname nickname) {
         validateDuplicateNickname(nickname);
         nicknameRepository.save(nickname);

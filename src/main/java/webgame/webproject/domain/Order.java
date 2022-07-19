@@ -57,4 +57,12 @@ public class Order {
             orderNickname.refund();
         }
     }
+
+    public int getTotalPrice() {
+        int totalPrice = 0;
+        for (OrderNickname orderNickname : orderNicknames) {
+            totalPrice += orderNickname.getTotalPrice();
+        }
+        return totalPrice;
+    }
 }
